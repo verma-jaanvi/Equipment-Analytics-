@@ -1,15 +1,25 @@
-Flask==3.0.0
-flask-cors==4.0.0
-gunicorn==21.2.0
+# Core Django Backend
+Django>=5.0
+djangorestframework>=3.15
 
-pandas==2.2.2
-numpy==1.26.4
+# CSV Data Analytics
+pandas>=2.0
+numpy>=1.26
 
-matplotlib==3.8.4
-seaborn==0.13.2
+# File Upload Support
+Pillow>=10.0
 
-reportlab==4.1.0
+# API Utilities
+django-cors-headers>=4.3
 
-scikit-learn==1.4.2
+# PDF Report Generation
+reportlab>=4.0
 
-python-dotenv==1.0.1
+# Filtering & Clean API Output (optional but professional)
+django-filter>=24.0
+
+# Deployment & Production Server Support
+gunicorn>=21.2
+
+# Environment Variable Management (recommended best practice)
+python-dotenv>=1.0
