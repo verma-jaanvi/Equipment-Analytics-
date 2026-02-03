@@ -1,6 +1,7 @@
 # Core Django Backend
 Django>=5.0
 djangorestframework>=3.15
+gunicorn
 
 # CSV Data Analytics
 pandas>=2.0
