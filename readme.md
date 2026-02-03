@@ -55,10 +55,10 @@ This system provides a complete workflow:
 | Backend API  | Django + Django REST Framework |
 | Database     | SQLite3 |
 | Auth System  | Token Authentication |
-| Web Frontend | React (Vite) |
-| Desktop App  | Python + PyQt5 |
-| Analytics    | Pandas |
-| Charts       | Matplotlib |
+| Web Frontend | React + Chart.js |
+| Desktop App  | PyQt5 + Matplotlib |
+| Analytics and data handling    | Pandas |
+| Charts       | Matplotlib & Chart.js|
 | PDF Reports  | ReportLab |
 
 ---
@@ -95,4 +95,151 @@ Equipment_Analytics_Dashboard/
 │   └── main.py             # Entry point
 │
 └── sample_equipment_data.csv
+```
+# 🏗️ Multi-Platform Analytics & Reporting System
 
+![Status](https://img.shields.io/badge/status-completed-success)
+![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Desktop-blue)
+![Backend](https://img.shields.io/badge/backend-Django%20REST-green)
+
+A robust full-stack solution featuring a unified backend for both Web and Desktop applications, providing secure authentication, dataset analytics, and automated PDF report generation.
+
+---
+
+## ✅ Features Implemented
+
+### 🔐 Authentication System
+Signup and Login are fully supported across both platforms:
+* ✅ **Web Frontend** (React)
+* ✅ **Desktop App** (PyQt5)
+* **Secure Storage:** Passwords hashed using Django’s internal hashing algorithms.
+* **Security:** Token-based authentication ensures all data access is protected.
+
+### 📤 Dataset Upload System
+Users can upload CSV files containing technical parameters:
+* **Fields:** `Type`, `Flowrate`, `Pressure`, `Temperature`
+* **Validation:** Backend automatically validates required columns.
+* **Storage:** Saves dataset files and metadata summaries in **SQLite**.
+
+### 📊 Analytics Dashboard
+Real-time visualization after every successful upload:
+* ✅ **Summary Statistics Cards**
+* ✅ **Equipment Distribution Charts** (Bar/Pie)
+* ✅ **Dataset Preview Table** (Displaying first 10 rows)
+* ✅ **Upload History:** Tracks the last 5 uploads per user.
+
+### 🧾 Professional PDF Reports
+Downloadable reports featuring:
+* **Metadata:** Title page and dataset context.
+* **Analysis:** Summary tables and distribution charts.
+* **Formatting:** Clean tabular previews of data.
+* *Accessible from both Web and Desktop dashboards.*
+
+---
+
+## 🚀 Setup & Installation Guide
+
+### ✅ Backend Setup (Django REST API)
+1.  **Navigate to backend folder:**
+    ```bash
+    cd backend
+    ```
+2.  **Create virtual environment:**
+    ```bash
+    python -m venv venv
+    # Activate (Mac/Linux):
+    source venv/bin/activate
+    # Activate (Windows):
+    venv\Scripts\activate
+    ```
+3.  **Install requirements:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Apply migrations:**
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+5.  **Run backend server:**
+    ```bash
+    python manage.py runserver
+    ```
+    *Backend starts at:* `http://127.0.0.1:8000/`
+
+### ✅ Web Frontend Setup (React)
+1.  **Navigate to frontend folder:**
+    ```bash
+    cd web-frontend
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Run development server:**
+    ```bash
+    npm run dev
+    ```
+    *Frontend runs at:* `http://localhost:5173/`
+
+### ✅ Desktop Application Setup (PyQt5)
+1.  **Navigate to desktop app folder:**
+    ```bash
+    cd desktop-app
+    ```
+2.  **Install required packages:**
+    ```bash
+    pip install pyqt5 requests matplotlib pandas
+    ```
+3.  **Run desktop dashboard:**
+    ```bash
+    python main.py
+    ```
+
+---
+
+## ✅ Usage Instructions
+
+1.  **Signup:** Create an account via either the Web or Desktop interface.
+2.  **Login:** Securely sign in to access your personal dashboard.
+3.  **Upload Dataset:** Use a CSV with the following structure:
+    ```csv
+    Type,Flowrate,Pressure,Temperature
+    Pump,20,15,50
+    Valve,12,10,40
+    Heater,18,12,55
+    ```
+4.  **View Analytics:** View summary stats, preview tables, and distribution charts instantly.
+5.  **History:** View your last 5 uploads (older uploads are automatically cleared per user).
+6.  **Download PDF:** Click the "Download Report" button on either platform.
+
+---
+
+## ✅ Screening Task Compliance Checklist
+
+| Task Requirement | Status |
+| :--- | :--- |
+| React Web Dashboard | ✅ Completed |
+| PyQt5 Desktop Dashboard | ✅ Completed |
+| Authentication + Signup/Login | ✅ Completed |
+| SQLite Integration | ✅ Completed |
+| Dataset Upload + Preview Table | ✅ Completed |
+| Charts Visualization | ✅ Completed |
+| PDF Report Generation | ✅ Completed |
+| Last 5 Upload History per User | ✅ Completed |
+| Token Protected Reports | ✅ Completed |
+
+---
+
+## 📌 Future Improvements
+* **Enhanced Navigation:** Further modularize React Router for `/login`, `/signup`, and `/dashboard`.
+* **Report Layouts:** Implement Platypus layouts for more complex PDF designs.
+* **Data Browsing:** Add pagination to browse full datasets beyond the preview.
+* **Deployment:** Host backend and frontend on cloud platforms.
+
+---
+
+## 👩‍💻 Author
+**Jahnvi Verma**
+*Computer Science Student | Full Stack Developer*
+*Built for Screening Task Submission* ✅
